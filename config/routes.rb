@@ -1,6 +1,7 @@
 NSSRailsToDoList::Application.routes.draw do
-  root to: "tasks#index"
-  resources :tasks, only: [:index, :create]
+  root to: "lists#index"
+  resources :tasks, only: [:create, :destroy, :edit, :update]
+  resources :lists, only: [:index, :create, :destroy, :edit, :update]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  margin: 0px;
+}
+
+.new_task{
+  margin-bottom: 25px;
+}

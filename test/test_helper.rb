@@ -4,6 +4,7 @@ require 'rails/test_help'
 require 'active_record'
 require 'capybara/rails'
 
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
@@ -16,4 +17,15 @@ end
 class ActionDispatch::IntegrationTest
 	include Capybara::DSL
 	self.use_transactional_fixtures = false
+end
+
+DatabaseCleaner.strategy = :transaction
+class ActiveSupport::TestCase
+  def setup
+    DatabaseCleaner.start
+  end
+
+  def teardown
+    DatabaseCleaner.clean
+  end
 end
